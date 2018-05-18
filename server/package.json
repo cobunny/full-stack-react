@@ -1,0 +1,27 @@
+{
+  "name": "fullstack-react",
+  "version": "1.0.0",
+  "description": "Server side rendering react project",
+  "main": "index.js",
+  "scripts": {
+    "dev:build:server": "webpack --config ./webpack.server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cobunny",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.2",
+    "express": "^4.16.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^3.5.6"
+  }
+}
