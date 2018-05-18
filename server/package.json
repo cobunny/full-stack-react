@@ -25,6 +25,7 @@
     "nodemon": "^1.17.4",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "webpack": "^3.5.6"
+    "webpack": "^3.5.6",
+    "webpack-merge": "^4.1.2"
   }
 }
