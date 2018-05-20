@@ -4,11 +4,11 @@
   "description": "Server side rendering react project",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "npm-run-all --parallel security-check dev:*",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "dev:build-server": "webpack --config ./webpack.server.js --watch",
     "dev:build-client": "webpack --config ./webpack.client.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "security-check": "nsp check"
   },
   "author": "Cobunny",
   "license": "ISC",
@@ -30,6 +30,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
+    "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
