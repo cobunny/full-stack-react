@@ -1,15 +1,21 @@
+import App from './App';
 import HomePage from './pages/HomePage';
 import UsersListPage from './pages/UsersListPage';
 
+// Map routes to components
 export default [
   {
-    ...HomePage,
-    path: '/',
-    exact: true
-  },
-  {
-    // Attach 'loadData' method to the component
-    ...UsersListPage,
-    path: '/users'
+    ...App,
+    routes: [
+      {
+        ...HomePage,
+        path: '/',
+        exact: true
+      },
+      {
+        ...UsersListPage,
+        path: '/users'
+      }
+    ]
   }
 ];
