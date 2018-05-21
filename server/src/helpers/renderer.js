@@ -6,6 +6,7 @@ import { renderRoutes } from 'react-router-config';
 import serialize from 'serialize-javascript';
 import Routes from '../client/Routes';
 
+// Set up a static router and render the app on the server.
 export default (req, store) => {
   const content = renderToString(
     <Provider store={store}>
