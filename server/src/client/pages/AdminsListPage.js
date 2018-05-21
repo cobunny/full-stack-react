@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAdmins } from '../actions/actions';
 import { Helmet } from 'react-helmet';
+import requireAuth from '../components/requireAuth';
 
 class AdminsListPage extends Component {
   componentDidMount() {
@@ -39,6 +40,8 @@ const mapStateToProps = ({ admins }) => {
 };
 
 export default {
-  loadData: ({ dispatch }) => dispatch(fetchAdmins()),
-  component: connect(mapStateToProps, { fetchAdmins })(AdminsListPage)
+  component: connect(mapStateToProps, { fetchAdmins })(
+    requireAuth(AdminsListPage)
+  ),
+  loadData: ({ dispatch }) => dispatch(fetchAdmins())
 };

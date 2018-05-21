@@ -41,6 +41,13 @@ app.get('*', (req, res) => {
   Promise.all(promises).then(() => {
     const context = {};
     const content = renderer(req, store, context);
+
+    //Redirect user if not login
+    if (context.url) {
+      return res.redirect(303, context.url);
+    }
+
+    // 404 error page
     if (context.notFound) {
       res.status(404);
     }
