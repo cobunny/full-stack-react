@@ -15,8 +15,8 @@ class UsersList extends Component {
 
   render() {
     return (
-      <div>
-        <h2>List of Users:</h2>
+      <div className="center-align">
+        <h3>Users List</h3>
         <ul>{this.renderUsers()}</ul>
       </div>
     );

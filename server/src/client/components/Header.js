@@ -10,13 +10,19 @@ const Header = ({ auth }) => {
   );
 
   return (
-    <div>
-      <Link to="/">Full Stack React</Link>
-      <div>
-        <Link to="/users">Users</Link>
-        {authBtn}
+    <nav>
+      <div className="nav-wrapper">
+        <Link to="/" className="brand-logo">
+          Full Stack React
+        </Link>
+        <ul className="right">
+          <li>
+            <Link to="/users">Users</Link>
+          </li>
+          <li>{authBtn}</li>
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

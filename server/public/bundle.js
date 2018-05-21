@@ -37988,22 +37988,34 @@ var Header = function Header(_ref) {
   );
 
   return _react2.default.createElement(
-    'div',
+    'nav',
     null,
     _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/' },
-      'Full Stack React'
-    ),
-    _react2.default.createElement(
       'div',
-      null,
+      { className: 'nav-wrapper' },
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: '/users' },
-        'Users'
+        { to: '/', className: 'brand-logo' },
+        'Full Stack React'
       ),
-      authBtn
+      _react2.default.createElement(
+        'ul',
+        { className: 'right' },
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/users' },
+            'Users'
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          authBtn
+        )
+      )
     )
   );
 };
@@ -38035,9 +38047,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Home = function Home() {
   return _react2.default.createElement(
-    'h1',
-    null,
-    'Home component'
+    "div",
+    { className: "center-align" },
+    _react2.default.createElement(
+      "h3",
+      null,
+      "Welcome"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Server-side rendering example"
+    )
   );
 };
 
@@ -38102,11 +38123,11 @@ var UsersList = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'center-align' },
         _react2.default.createElement(
-          'h2',
+          'h3',
           null,
-          'List of Users:'
+          'Users List'
         ),
         _react2.default.createElement(
           'ul',
@@ -38158,9 +38179,18 @@ var NotFoundPage = function NotFoundPage(_ref) {
 
   staticContext.notFound = true;
   return _react2.default.createElement(
-    'h1',
-    null,
-    ' Page not found!! '
+    "div",
+    { className: "center-align" },
+    _react2.default.createElement(
+      "h3",
+      null,
+      "Ooops!"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Page not found!"
+    )
   );
 };
 
