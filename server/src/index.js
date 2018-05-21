@@ -25,9 +25,17 @@ app.get('*', (req, res) => {
   const store = createStore(req);
 
   // Find the components will be shown base on the request URL and load needed data.
-  const promises = matchRoutes(Routes, req.path).map(({ route }) => {
-    return route.loadData ? route.loadData(store) : null;
-  });
+  const promises = matchRoutes(Routes, req.path)
+    .map(({ route }) => {
+      return route.loadData ? route.loadData(store) : null;
+    })
+    .map(promise => {
+      if (promise) {
+        return new Promise((resolve, reject) => {
+          promise.then(resolve).catch(resolve);
+        });
+      }
+    });
 
   // Render the app after all the promises are resolved
   Promise.all(promises).then(() => {
