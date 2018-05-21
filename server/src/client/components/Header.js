@@ -12,12 +12,15 @@ const Header = ({ auth }) => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <Link to="/" className="brand-logo">
+        <Link to="/" className="brand-logo center">
           Full Stack React
         </Link>
         <ul className="right">
           <li>
             <Link to="/users">Users</Link>
+          </li>
+          <li>
+            <Link to="/admins">Admins</Link>
           </li>
           <li>{authBtn}</li>
         </ul>
