@@ -31,7 +31,12 @@ app.get('*', (req, res) => {
 
   // Render the app after all the promises are resolved
   Promise.all(promises).then(() => {
-    res.send(renderer(req, store));
+    const context = {};
+    const content = renderer(req, store, context);
+    if (context.notFound) {
+      res.status(404);
+    }
+    res.send(content);
   });
 });
 
