@@ -7,7 +7,7 @@ import reducers from '../client/reducers';
 // On initial page loading, attach and use the cookie to identifiy the client to the API .
 export default req => {
   const axiosInstance = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/',
+    baseURL: 'http://react-ssr-api.herokuapp.com/',
     headers: { cookie: req.get('cookie') || '' }
   });
 

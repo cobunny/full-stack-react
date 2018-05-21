@@ -12,9 +12,9 @@ const app = express();
 // Set up a proxy server
 app.use(
   '/api',
-  proxy('https://jsonplaceholder.typicode.com', {
+  proxy('http://react-ssr-api.herokuapp.com/', {
     proxyReqOptDecorator(opts) {
-      opts.headers['x-forwarded-host'] = 'localhost:9090';
+      opts.headers['x-forwarded-host'] = 'localhost:3000';
       return opts;
     }
   })
